@@ -64,6 +64,11 @@
 			<version>3.8.0</version>
 			<scope>test</scope>
 		</dependency>
+		<dependency>
+   			<groupId>mysql</groupId>
+   			<artifactId>mysql-connector-java</artifactId>
+   			<scope>runtime</scope>
+		</dependency>
 	</dependencies>
 
 	<build>
@@ -105,6 +110,12 @@
 				<maven.test.skip>false</maven.test.skip>
 				<myTestSourceDirectory>${project.basedir}/src/it/java</myTestSourceDirectory>
 			</properties>
+		</profile>
+		<profile>
+   			<id>production</id>
+  			 <properties>
+       			     <maven.test.skip>true</maven.test.skip>
+   			 </properties>
 		</profile>
 	</profiles>
 
